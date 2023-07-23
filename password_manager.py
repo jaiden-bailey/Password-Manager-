@@ -23,7 +23,7 @@ def load_key():
 key = load_key()
 fer = Fernet(key)
 
-
+#function for viewing passwords in the file.
 def view():
     with open('passwords.txt', 'r') as f:
         for line in f.readlines():
@@ -32,7 +32,7 @@ def view():
             print("User:", user, "| Password:",
                   fer.decrypt(passw.encode()).decode())
 
-
+#function for add a password to the file
 def add():
     name = input('Account Name: ')
     pwd = input("Password: ")
@@ -40,7 +40,7 @@ def add():
     with open('passwords.txt', 'a') as f:
         f.write(name + "|" + fer.encrypt(pwd.encode()).decode() + "\n")
 
-
+#loop to run menu
 while True:
     mode = input(
         "Would you like to add a new password or view existing ones (view, add), press q to quit? ").lower()
