@@ -1,3 +1,6 @@
+#Jaiden Bailey  07-14-2023
+
+
 from cryptography.fernet import Fernet
 
 #future implementation for a master key 
